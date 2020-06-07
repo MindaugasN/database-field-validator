@@ -4,8 +4,6 @@ We want to define classes that have fields that we want validated before we can 
 
 Objects will later be serialized into a database, and we need to ensure the data is valid before we write to the database.
 
-## Implementation Part 1
-
 ### IntegerField
 
 * [x] Only allows integral numbers;
@@ -30,26 +28,24 @@ class Person:
 
 ```
 project
-|-- part_1
-    |-- model
-        |-- fields
-            |-- char.py
-            |-- integer.py
-        |-- utils
-            |-- validators.py
-    |-- tests
-        |-- unit
-            |-- test_integer_field.py
-|-- part_2
-    |-- model
-        |-- fields
-            |-- char.py
-            |-- integer.py
-        |-- utils
-            |-- validators.py
-    |-- tests
-        |-- unit
-            |-- test_integer_field.py
+|-- model
+    |-- __init__.py
+    |-- base.py
+    |-- fields
+        |-- char.py
+        |-- integer.py    
+|-- tests
+    |-- __init__.py
+    |-- unit
+        |-- test_integer_field.py
+        |-- test_char_field.py
 |-- README.md
 |-- .gitignore
+```
+
+## Running tests
+
+```bash
+python -m unittest tests.unit.test_integer_field -v
+python -m unittest tests.unit.test_char_field -v
 ```
