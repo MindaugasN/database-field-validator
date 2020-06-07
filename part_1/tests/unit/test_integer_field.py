@@ -50,5 +50,44 @@ class TestIntegerField(unittest.TestCase):
         obj_class = type(obj)
         self.assertIsInstance(obj_class.age, IntegerField)
 
+    def test_set_age_min_only(self):
+        """Tests that we can specifiy min value only"""
+        min_ = 0
+        max_ = None
+        obj = self.create_test_class(min_, max_)
+
+        values = range(min_, min_ + 100, 10)
+        
+        for i, value in enumerate(values):
+            with self.subTest(test_number=i):
+                obj.age = value
+                self.assertEqual(value, obj.age)
+
+    def test_set_age_max_only(self):
+        """Tests that we can specifiy max value only"""
+        min_ = None
+        max_ = 10
+        obj = self.create_test_class(min_, max_)
+
+        values = range(max_ - 100, max_, 10)
+        
+        for i, value in enumerate(values):
+            with self.subTest(test_number=i):
+                obj.age = value
+                self.assertEqual(value, obj.age)
+
+    def test_set_age_no_limits(self):
+        """Tests that we can use IntegerField without any limits"""
+        min_ = None
+        max_ = None
+        obj = self.create_test_class(min_, max_)
+
+        values = range(-100, 100, 10)
+        
+        for i, value in enumerate(values):
+            with self.subTest(test_number=i):
+                obj.age = value
+                self.assertEqual(value, obj.age)
+
 if __name__ == '__main__':
     run_tests(TestIntegerField)

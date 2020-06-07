@@ -39,7 +39,7 @@ project
             |-- validators.py
     |-- tests
         |-- unit
-            |-- test_interfield.py
+            |-- test_integer_field.py
 |-- part_2
     |-- model
         |-- fields
@@ -49,7 +49,7 @@ project
             |-- validators.py
     |-- tests
         |-- unit
-            |-- test_interfield.py
+            |-- test_integer_field.py
 |-- README.md
 |-- .gitignore
 ```
