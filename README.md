@@ -8,15 +8,15 @@ Objects will later be serialized into a database, and we need to ensure the data
 
 ### IntegerField
 
-* [ ] Only allows integral numbers;
-* [ ] Has minimum value;
-* [ ] Has maximum value;
+* [x] Only allows integral numbers;
+* [x] Has minimum value;
+* [x] Has maximum value;
 
 ### CharField
 
-* [ ] Only allows strings;
-* [ ] Has minimum length;
-* [ ] Has maximum length;
+* [x] Only allows strings;
+* [x] Has minimum length;
+* [x] Has maximum length;
 
 ## Expected usage
 
