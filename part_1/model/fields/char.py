@@ -1,5 +1,6 @@
 class CharField:
     def __init__(self, min_value=None, max_value=None):
+        min_value = max(0, min_value) or 0
         self.min_value = min_value
         self.max_value = max_value
         
@@ -8,7 +9,7 @@ class CharField:
         
     def __set__(self, instance, value):
         if not isinstance(value, str):
-            raise TypeError(f'{self.property_name} must be a type of string.')
+            raise ValueError(f'{self.property_name} must be a type of string.')
         if self.min_value is not None and len(value) < self.min_value:
             raise ValueError(f'{self.property_name} cannot be less than {self.min_value} char length.')
         if self.max_value is not None and len(value) > self.max_value:
