@@ -16,7 +16,7 @@ class TestIntegerField(unittest.TestCase):
         return obj()
 
     def test_set_age_ok(self):
-        """Tests that valid valued can be assigned/retrieved"""
+        """Tests that valid values can be assigned/retrieved"""
         min_ = 5
         max_ = 10
         obj = self.create_test_class(min_, max_)

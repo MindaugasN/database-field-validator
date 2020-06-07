@@ -1,6 +1,7 @@
 class CharField:
     def __init__(self, min_value=None, max_value=None):
-        min_value = max(0, min_value) or 0
+        min_value = min_value or 0
+        min_value = max(0, min_value)
         self.min_value = min_value
         self.max_value = max_value
         
